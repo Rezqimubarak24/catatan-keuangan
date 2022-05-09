@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>catatan keuangan</title>
+    <!--css botstrap5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+    <h2 class="text-center bg-warning"><%= title %></h2>
+     <!--input list-->
+        <table class="table table-dark table-striped ">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Date</th>
+                <th scope="col">Hari</th>
+                <th scope="col">Pemasukan</th>
+                <th scope="col">Pengeluaran</th>
+                <th scope="col">Tabungan</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for (let user of users) { %>
+                 <tr>
+                    <th scope="row"><%= user.id %></th>
+                    <th scope="row"><%= user.date %></th>
+                    <th scope="row"><%= user.hari %></th>
+                    <th scope="row"><%= user.pemasukan %></th>
+                    <th scope="row"><%= user.pengeluaran %></th>
+                    <th scope="row"><%= user.tabungan %></th>
+                    <th scope="row"><%= user.total %></th>
+                 </tr>
+                    <% } %>
+            </tbody>
+          </table>
+         <form action="/tambah" method="post">
+             <!--input form-->
+              <div>
+                  <h3 class="text-center bg-warning">Masukkan ke List</h3>
+              </div>
+            <div class="row mb-3">
+              <label for="date" class="col-sm-2 col-form-label">Date</label>
+              <div class="col-sm-10">
+                <input type="text" name="date" class="form-control">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="hari" class="col-sm-2 col-form-label">Hari</label>
+              <div class="col-sm-10">
+                <input type="text" name="hari" class="form-control">
+              </div>
+            </div>
+            <div class="row mb-3">
+                <label for="pemasukan" class="col-sm-2 col-form-label">Pemasukan</label>
+                <div class="col-sm-10">
+                  <input type="text" name="pemasukan" class="form-control">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="pengeluaran" class="col-sm-2 col-form-label">Pengeluaran</label>
+                <div class="col-sm-10">
+                  <input type="text" name="pengeluaran" class="form-control">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="tabungan" class="col-sm-2 col-form-label">Tabungan</label>
+                <div class="col-sm-10">
+                  <input type="text" name="tabungan" class="form-control">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="total" class="col-sm-2 col-form-label">Total</label>
+                <div class="col-sm-10">
+                  <input type="text" name="total" class="form-control">
+                </div>
+              </div>
+              <!--button submit-->
+                <input type="submit" class="btn btn-danger" value="Tambahkan"/>
+         </form>
+    </div>
+ <!--script botstrap5-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
